@@ -1645,6 +1645,7 @@ class UniFiClient:
                             result["has_gateway"] = True
                             result["gateway_model"] = model_code
                             result["gateway_name"] = device.get('name') or get_friendly_model_name(model_code)
+                            result["gateway_firmware"] = device.get('version')
                             result["supports_ids_ips"] = model_code in IDS_IPS_SUPPORTED_MODELS
 
                             logger.info(
@@ -1665,6 +1666,7 @@ class UniFiClient:
                         result["has_gateway"] = True
                         result["gateway_model"] = model_code
                         result["gateway_name"] = express_device.get('name') or get_friendly_model_name(model_code)
+                        result["gateway_firmware"] = express_device.get('version')
                         result["supports_ids_ips"] = model_code in IDS_IPS_SUPPORTED_MODELS
 
                         logger.info(

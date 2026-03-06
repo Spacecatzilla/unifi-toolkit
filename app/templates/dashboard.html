@@ -1226,6 +1226,7 @@
                     text += `  Model: ${info.gateway.model}`;
                     if (info.gateway.name) text += ` (${info.gateway.name})`;
                     text += `\n`;
+                    if (info.gateway.firmware) text += `  Firmware: ${info.gateway.firmware}\n`;
                     text += `  UniFi OS: ${info.gateway.is_unifi_os ? 'Yes' : 'No'}\n`;
                     text += `  IDS/IPS Support: ${info.gateway.supports_ids_ips ? 'Yes' : 'No'}\n`;
                     if (info.gateway.ips_mode) {
@@ -1354,6 +1355,9 @@
                             body += ` (${info.gateway.name})`;
                         }
                         body += `\n`;
+                        if (info.gateway.firmware) {
+                            body += `  - Firmware: ${info.gateway.firmware}\n`;
+                        }
                         body += `  - UniFi OS: ${info.gateway.is_unifi_os ? 'Yes' : 'No'}\n`;
                         body += `  - IDS/IPS Support: ${info.gateway.supports_ids_ips ? 'Yes' : 'No'}\n`;
                         if (info.gateway.ips_mode) {

@@ -294,6 +294,7 @@ async def get_debug_info():
         "gateway": {
             "model": gateway_info.get("gateway_model") if gateway_info else None,
             "name": gateway_info.get("gateway_name") if gateway_info else None,
+            "firmware": gateway_info.get("gateway_firmware") if gateway_info else None,
             "supports_ids_ips": gateway_info.get("supports_ids_ips") if gateway_info else None,
             "is_unifi_os": gateway_info.get("is_unifi_os") if gateway_info else None,
             "ips_mode": ips_settings.get("ips_mode") if ips_settings else None
